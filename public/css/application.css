@@ -12,3 +12,14 @@
 #regform {
   display: none;
 }
+
+.tabs {
+  list-style: none;
+}
+
+.tabs li {
+  display: inline;
+}
+
+.tabs li a:hover {background-color: #D3D3D3;}
+.tabs li a:focus, .active {background-color: #D3D3D3;}

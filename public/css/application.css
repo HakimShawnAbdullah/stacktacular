@@ -8,3 +8,7 @@
 .votes {
   display: inline-block;
 }
+
+#regform {
+  display: none;
+}

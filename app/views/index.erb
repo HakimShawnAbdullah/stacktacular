@@ -1,0 +1,32 @@
+<div>
+  <h1>Stacktacular!</h1>
+
+  <% if current_user %>
+  <!-- make a users controller and view to handle this request -->
+    <a href="/users/<%= current_user.id%>"><%= current_user.name %></a>
+  <% end %>
+
+  <div class="container" id="post_container">
+    <h2>Recent Posts</h2>
+    <% @questions.each do |question| %>
+      <div class="question">
+        <div class="votes">
+        <!-- may need to change this and the title to question.votes -->
+          <%= question[:votes] %>
+        </div>
+        <%= question[:title] %>
+      </div>
+    <% end %>
+  </div>
+
+  <% if !current_user %>
+    <div class="container">
+      <h2>Login!</h2>
+      <form action="/sessions" method="post">
+        <input type="text" name="email" placeholder="email">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" name="submit">
+      </form>
+    </div>
+  <% end %>
+</div>

@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class User < ActiveRecord::Base
   # Remember to create a migration!
   include BCrypt
@@ -7,10 +9,6 @@ class User < ActiveRecord::Base
   has_many :votes
   has_many :responses
 
-  def authenticate(password)
-    self.password == password
-  end
-
   def password
     @password ||= Password.new(hashed_password)
   end
@@ -18,6 +16,10 @@ class User < ActiveRecord::Base
   def password=(new_password)
     @password = Password.create(new_password)
     self.hashed_password = @password
+  end
+
+  def authenticate(password)
+    self.password == password
   end
 
 end

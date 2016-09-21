@@ -9,13 +9,14 @@
   <div class="container" id="post_container">
     <h2>Recent Posts</h2>
     <% @questions.each do |question| %>
-      <div class="question">
+      <div class="questions">
         <div class="votes">
         <!-- may need to change this and the title to question.votes -->
           <%= question[:votes] %>
         </div>
         <%= question[:title] %>
       </div>
+      <br>
     <% end %>
   </div>
 

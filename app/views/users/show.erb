@@ -1,0 +1,21 @@
+<div id="nav">
+  <ul class="tabs">
+    <li><a href="#" class="tablinks">Profile</a></li>
+    <li><a href="#" class="tablinks">Activity</a></li>
+    <li><a href="#" class="tablinks">Edit Profile & Settings</a></li>
+  </ul>
+</div>
+<h2><%= @user.name %></h2>
+<a href="#">click here to edit</a>
+
+<h3>Summary</h3>
+
+<p><a href="#">Answers</a> (<%= @user.answers.count%>)</p>
+
+
+<p><a href="#">Questions</a> (<%= @user.questions.count %>)</p>
+
+<p><a href="#">Responses</a> (<%= @user.responses.count %>)</p>
+
+<p>Votes Cast (<%= @user.votes.count %>)</p>
+

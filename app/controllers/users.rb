@@ -33,6 +33,7 @@ end
 
 delete '/users/:id' do
   @user = User.find(params[:id])
+  session[:user_id] = nil
   @user.destroy
   redirect '/'
 end

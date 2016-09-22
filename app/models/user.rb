@@ -1,4 +1,5 @@
 require 'bcrypt'
+require 'pry'
 
 class User < ActiveRecord::Base
   # Remember to create a migration!
@@ -17,9 +18,4 @@ class User < ActiveRecord::Base
     @password = Password.create(new_password)
     self.hashed_password = @password
   end
-
-  def authenticate(password)
-    self.password == password
-  end
-
 end

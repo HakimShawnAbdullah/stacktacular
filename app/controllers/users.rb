@@ -5,3 +5,13 @@ get '/users/new' do
     erb :'/users/new'
   end
 end
+
+post '/users' do
+  user = User.new(params[:user])
+  if user.save
+    session[:user_id] = user.id
+    redirect "/users/#{user.id}"
+  else
+    redirect "/"
+  end
+end

@@ -1,7 +1,8 @@
 <div class="container">
 	<div>
-		<h1><%= total_votes(@question) %> <%= @question.title %></h1>
-		<p><%= @user.name %></p>
+		<h1><%= @question.title %></h1>
+		<div id="like">Likes: <%= total_votes(@question) %></div>
+		<p>Author name: <%= @user.name %></p>
 	</div>
 
 	<div class="content">
@@ -9,6 +10,7 @@
 	</div>
 
 	<div class="answers">
+		<h3>Answers: </h3>
 		<% @question.answers.each do |answer| %>
 			<div class="answer">
 				<div class="score">
@@ -16,7 +18,7 @@
 				    <button type="submit" name="vote" value="upvote" class="upvote-button"></button>
 				    <button type="submit" name="vote" value="downvote" class="downvote-button"></button>
 				  </form>
-					<p><%= total_votes(answer) %> <%= answer.content %></p>
+					<p>Number of votes: <%= total_votes(answer) %> <%= answer.content %></p>
 				</div>
 			</div>
 		<% end %>

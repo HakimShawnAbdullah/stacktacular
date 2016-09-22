@@ -15,11 +15,20 @@
 
 .tabs {
   list-style: none;
+  border: 1px grey solid;
 }
 
 .tabs li {
   display: inline;
 }
 
+.tabs li.active {
+  border-bottom: white;
+  border-top-color: orange;
+}
+.tabs li.active a {
+  border-bottom: none;
+}
+.tabs li a {text-decoration: none;}
 .tabs li a:hover {background-color: #D3D3D3;}
 .tabs li a:focus, .active {background-color: #D3D3D3;}

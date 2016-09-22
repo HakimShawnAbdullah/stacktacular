@@ -15,7 +15,7 @@
 
   <p>Answers (<%= @user.answers.count%>)</p>
   <% @user.answers.first(5).each do |response| %>
-    <p><a href="#"><%= answers.content %></a></p>
+    <p><a href="#"><%= response.content %></a></p>
     <% end %>
 
   <p>Questions (<%= @user.questions.count %>)</p>
@@ -33,4 +33,4 @@
   <p class="questionForm">Click <a href="/questions/new">here</a> to post a question</p>
 </div>
 
-<div class='container' class='questionFormDiv'></div>
+<div class='container questionFormDiv'></div>

@@ -13,9 +13,13 @@
 			<div class="answer">
 				<div class="score">
 				  <form class="inline" action="/votes/<%= answer.id %>" method="post">
-				    <button type="submit" name="vote" value="upvote" class="upvote-button"></button>
-				    <button type="submit" name="vote" value="downvote" class="downvote-button"></button>
+				    <button type="submit" name="vote" value="upvote" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-arrow-up"></span></button>
+				    <button type="submit" name="vote" value="downvote" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-arrow-down"></span></button>
 				  </form>
+
+				  <!--
+glyphicon glyphicon-arrow-up
+glyphicon glyphicon-arrow-down -->
 					<p><%= total_votes(answer) %> <%= answer.content %></p>
 				</div>
 			</div>

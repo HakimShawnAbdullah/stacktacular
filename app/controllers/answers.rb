@@ -8,7 +8,7 @@ end
 
 post '/answers' do
   question = Question.find(session[:question_id])
-  question.answers.create(content: params[:content], question_id: question.id)
+  question.answers.create(content: params[:content], question_id: question.id, user_id: session[:user_id])
 
   redirect :"questions/#{session[:question_id]}"
 end

@@ -12,9 +12,12 @@
 		<% @question.answers.each do |answer| %>
 			<div class="answer">
 				<div class="score">
-					<%= total_votes(answer) %>
+				  <form class="inline" action="/votes/<%= answer.id %>" method="post">
+				    <button type="submit" name="vote" value="upvote" class="upvote-button"></button>
+				    <button type="submit" name="vote" value="downvote" class="downvote-button"></button>
+				  </form>
+					<p><%= total_votes(answer) %> <%= answer.content %></p>
 				</div>
-				<p><%= answer.content %></p>
 			</div>
 		<% end %>
 	</div>

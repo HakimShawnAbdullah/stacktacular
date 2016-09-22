@@ -1,3 +1,7 @@
+get "/questions/show" do
+  erb :"questions/show"
+end
+
 get "/questions/new" do
   if request.xhr?
     erb :"partials/_questionForm"

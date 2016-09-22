@@ -24,9 +24,9 @@
 </div>
 
 <div id="user-questions">
-<p><a id="questions" href="#">Questions</a> (<%= @user.questions.count %>)</p>
+<p id="questions">Questions (<%= @user.questions.count %>)</p>
 <% @user.questions.first(5).each do |question| %>
-  <p><a href="#"><%= question.title %></a></p>
+  <p><a href="/questions/<%= question.id %>"><%= question.title %></a></p>
   <% end %>
 </div>
 <div style="clear: both;"></div>
@@ -38,5 +38,3 @@
 </div>
 
 <p id="user-vote" >Votes Cast (<%= @user.votes.count %>)</p><br><br><br><br><br><br><br><br><br><br><br>
-
-

@@ -1,21 +1,29 @@
 <div class="container">
 	<div>
-		<!-- add method to controller to return total votes -->
-		<h1><%= total_votes(@question) @question.title %></h1>
+		<h1><%= total_votes(@question) %> <%= @question.title %></h1>
 		<p><%= @user.name %></p>
 	</div>
-	
+
 	<div class="content">
 		<p><%= @question.content %></p>
 	</div>
 
 	<div class="answers">
-		<!-- will this work? -->
 		<% @question.answers.each do |answer| %>
 			<div class="answer">
-				<p><%= total_votes(answer) answer.content %></p>
+				<div class="score">
+				  <form class="inline" action="/votes/<%= answer.id %>" method="post">
+				    <button type="submit" name="vote" value="upvote" class="upvote-button"></button>
+				    <button type="submit" name="vote" value="downvote" class="downvote-button"></button>
+				  </form>
+					<p><%= total_votes(answer) %> <%= answer.content %></p>
+				</div>
 			</div>
 		<% end %>
 	</div>
 
+	<a id="answerFormLink" href="/answers/new">Answer this question</a>
+	<a href="/">Back home</a>
 </div>
+
+<div class="container" id="answerFormDiv"></div>

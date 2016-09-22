@@ -4,6 +4,8 @@ helpers do
     # up = post.votes.where(type_of_vote: "upvote").count
     # down = post.votes.where(type_of_vote: "downvote").count
     # up + down
+    p post
+    p "========================================================="
     score = 0
     post.votes.each do |vote|
       if vote.type_of_vote == "upvote"

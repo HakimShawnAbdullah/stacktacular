@@ -3,7 +3,11 @@
 
   <% if current_user %>
   <!-- make a users controller and view to handle this request -->
-    <a href="/users/<%= current_user.id%>"><%= current_user.name %></a>
+    <a href="/users/<%= current_user.id%>"><%= current_user.name %></a>'s profile
+    <form action="/sessions" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Log Out">
+    </form>
   <% end %>
 
   <div class="container" id="post_container">
@@ -20,6 +24,7 @@
     <% end %>
   </div>
 
+<!-- LOGIN SECTION -->
   <% if !current_user %>
     <div class="container">
       <h2>Login!</h2>

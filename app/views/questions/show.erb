@@ -1,6 +1,6 @@
 <div class="container">
 	<div>
-		<h1><%= total_votes(@question) @question.title %></h1>
+		<h1><%= total_votes(@question) %> <%= @question.title %></h1>
 		<p><%= @user.name %></p>
 	</div>
 
@@ -11,9 +11,14 @@
 	<div class="answers">
 		<% @question.answers.each do |answer| %>
 			<div class="answer">
-				<p><%= total_votes(answer) answer.content %></p>
+				<div class="score">
+					<%= total_votes(answer) %>
+				</div>
+				<p><%= answer.content %></p>
 			</div>
 		<% end %>
 	</div>
+
+	<a href="/answers/new">Answer this question</a>
 
 </div>

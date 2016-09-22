@@ -44,5 +44,10 @@
 
   <% end %>
 
+  <% if current_user %>
+    <a class="questionForm" href="/questions/new">Post a question</a>
+    <div class="questionFormDiv container"></div>
+  <% end %>
+
 </div>
 

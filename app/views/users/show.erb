@@ -1,29 +1,42 @@
+ <a id="user-home" href="/" >Home</a>
 <div id="nav">
   <ul class="tabs">
     <li><a href="#" class="tablinks">Profile</a></li>
     <li><a href="#" class="tablinks">Activity</a></li>
     <li><a href="/users/<%= @user.id %>/edit" class="tablinks">Edit Profile & Settings</a></li>
   </ul>
+
+
 </div>
+<div id="user-display">
 <h2><%= @user.name %></h2>
-<a href="/users/<%= @user.id %>/edit">click here to edit</a>
+<a href="/users/<%= @user.id %>/edit">click here to edit</a><br>
+</div><br><br><br>
 
-<h3>Summary</h3>
+<h3>Summary</h3><br><br>
 
-<p><a href="#">Answers</a> (<%= @user.answers.count%>)</p>
+
+<div id="user-answers">
+<p><a id="answers" href="#">Answers</a> (<%= @user.answers.count%>)</p>
 <% @user.answers.first(5).each do |response| %>
   <p><a href="#"><%= answers.content %></a></p>
   <% end %>
+</div>
 
-<p><a href="#">Questions</a> (<%= @user.questions.count %>)</p>
+<div id="user-questions">
+<p><a id="questions" href="#">Questions</a> (<%= @user.questions.count %>)</p>
 <% @user.questions.first(5).each do |question| %>
   <p><a href="#"><%= question.title %></a></p>
   <% end %>
-
-<p><a href="#">Responses</a> (<%= @user.responses.count %>)</p>
+</div>
+<div style="clear: both;"></div>
+<div id="user-responses">
+<p><a id="responses" href="#">Responses</a> (<%= @user.responses.count %>)</p>
 <% @user.responses.first(5).each do |response| %>
   <p><a href="#"><%= response.content %></a></p>
   <% end %>
+</div>
 
-<p>Votes Cast (<%= @user.votes.count %>)</p>
+<p id="user-vote" >Votes Cast (<%= @user.votes.count %>)</p><br><br><br><br><br><br><br><br><br><br><br>
+
 

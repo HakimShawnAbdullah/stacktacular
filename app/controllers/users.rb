@@ -6,7 +6,6 @@ get '/users/new' do
   end
 end
 
-
 post '/users' do
   user = User.new(params[:user])
   if user.save
@@ -22,3 +21,19 @@ get '/users/:id' do
   erb :"/users/show"
 end
 
+get '/users/:id/edit' do
+  @user = User.find(params[:id])
+  erb :"/users/edit"
+end
+
+put '/users/:id' do
+  @user = User.find(params[:id])
+  @user.update(params[:user])
+  redirect "/users/#{@user.id}"
+end
+
+delete '/users/:id' do
+  @user = User.find(params[:id])
+  @user.destroy
+  redirect '/'
+end

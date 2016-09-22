@@ -2,11 +2,11 @@
   <ul class="tabs">
     <li><a href="#" class="tablinks">Profile</a></li>
     <li><a href="#" class="tablinks">Activity</a></li>
-    <li><a href="#" class="tablinks">Edit Profile & Settings</a></li>
+    <li><a href="/users/<%= @user.id %>/edit" class="tablinks">Edit Profile & Settings</a></li>
   </ul>
 </div>
 <h2><%= @user.name %></h2>
-<a href="#">click here to edit</a>
+<a href="/users/<%= @user.id %>/edit">click here to edit</a>
 
 <h3>Summary</h3>
 

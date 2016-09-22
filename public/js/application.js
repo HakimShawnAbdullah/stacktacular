@@ -5,6 +5,7 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
   showRegForm()
+  showQuestionForm()
 });
 
 function showRegForm() {
@@ -19,6 +20,22 @@ function showRegForm() {
         $("#regform").append(form);
         $("#regform").css("display", "block")
         $("#registrationlink").css("display","none")
+      });
+  });
+};
+
+function showQuestionForm() {
+  $("#questionForm").on('click', function(event){
+    event.preventDefault();
+
+    $.ajax({
+      method: "GET",
+      url: '/questions/new'
+    })
+      .done(function(form){
+        $("#questionFormDiv").append(form);
+        $("#questionFormDiv").css("display", "block")
+        $("#questionForm").css("display","none")
       });
   });
 };

@@ -1,5 +1,9 @@
 get "/questions/new" do
-  erb :"partials/_questionForm"
+  if request.xhr?
+    erb :"partials/_questionForm"
+  else
+    erb :"questions/new"
+  end
 end
 
 post "/questions" do

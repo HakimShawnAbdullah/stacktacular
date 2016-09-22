@@ -10,17 +10,17 @@
 
 <h3>Summary</h3>
 
-<p><a href="#">Answers</a> (<%= @user.answers.count%>)</p>
+<p>Answers (<%= @user.answers.count%>)</p>
 <% @user.answers.first(5).each do |response| %>
   <p><a href="#"><%= answers.content %></a></p>
   <% end %>
 
-<p><a href="#">Questions</a> (<%= @user.questions.count %>)</p>
+<p>Questions (<%= @user.questions.count %>)</p>
 <% @user.questions.first(5).each do |question| %>
-  <p><a href="#"><%= question.title %></a></p>
+  <p><a href="/questions/<%= question.id %>"><%= question.title %></a></p>
   <% end %>
 
-<p><a href="#">Responses</a> (<%= @user.responses.count %>)</p>
+<p>Responses (<%= @user.responses.count %>)</p>
 <% @user.responses.first(5).each do |response| %>
   <p><a href="#"><%= response.content %></a></p>
   <% end %>

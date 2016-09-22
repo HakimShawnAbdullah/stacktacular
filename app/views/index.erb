@@ -16,10 +16,10 @@
       <div class="questions">
         <div class="votes">
         <!-- may need to change this and the title to question.votes -->
-          <%= question[:votes] %>
+          <%= total_votes(question) %>
         </div>
         <!-- Chris link the href below to your new question page. -->
-        <a href="#"><%= question[:title] %></a>
+        <a href="/questions/<%= question.id %>"><%= question.title %></a>
       </div>
       <br>
     <% end %>
@@ -36,7 +36,7 @@
       </form>
       <br>
 
-      <p>Not registered yet? Click <a id="register" href="/users/new">here</a> to register.</p>
+      <p id="registrationlink">Not registered yet? Click <a id="register" href="/users/new">here</a> to register.</p>
     </div>
 
     <div class="container" id="regform"></div>

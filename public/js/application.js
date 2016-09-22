@@ -18,7 +18,7 @@ function showRegForm() {
       .done(function(form){
         $("#regform").append(form);
         $("#regform").css("display", "block")
-
+        $("#registrationlink").css("display","none")
       });
   });
 };

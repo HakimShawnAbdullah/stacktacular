@@ -221,4 +221,14 @@ body {
   margin-bottom: 3px;
 }
 
+.answerResponses {
+  border-left: 1px solid black;
+  padding-left: 10px;
+  border-radius: 5px;
+}
 
+.questionResponses {
+  border-left: 1px solid black;
+  padding-left: 10px;
+  border-radius: 5px;
+}

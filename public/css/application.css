@@ -1,10 +1,11 @@
 
 .container {
   margin: 20px auto;
+  border-radius: 15px;
   width: 800px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
-  background-color: #F0F8FF
+  background-color: #FCF4D9;
 }
 
 .votes {
@@ -16,7 +17,7 @@
 }
 
 .tabs {
-
+  margin-left: -40px;
   list-style: none;
   font-size: 14px;
   left: 5%;
@@ -53,17 +54,19 @@ h2 {
 
 h3 {
   position: relative;
-  left: 40%;
+  left: 37%;
   font-size: 30px;
 }
 
 #user-answers {
-  position: relative;
+  position: inline-block;
   float: left;
-  width: 50%;
+  width: 40%;
   left: 5%;
   right: 5%;
   height: 200px;
+  margin: 20px;
+  padding: 10px;
 }
 
 #user-home {
@@ -77,13 +80,17 @@ h3 {
 
 .answers{
   border: 1px dotted pink;
+  border-radius: 15px;
   margin-top: 15px;
+  background-color: #8ED2C9;
 }
 
 .answer{
   border: 1px dotted pink;
+  border-radius: 10px;
   margin: 10px;
   padding: 15px;
+  background-color: #FFB85F;
 }
 
 .content{
@@ -95,9 +102,10 @@ h3 {
 
 #user-questions {
   float: left;
-  width: 50%;
+  width: 40%;
   height: 200px;
   left: 0;
+  padding: 10px;
 }
 
 #questions {
@@ -105,9 +113,11 @@ h3 {
 }
 
 #user-responses {
+  border-top: 2px solid black;
+  margin-left: -20px;
   position: relative;
   float: left;
-  width: 50%;
+  width: 40%;
   left: 5%;
 
 }
@@ -122,8 +132,11 @@ h3 {
 }
 
 #user-vote {
+  border-top: 2px solid black;
   color: #00008B;
   float: left;
+  width: 40%;
+  margin-left: 80px;
 }
 
 body {
@@ -152,4 +165,35 @@ body {
 
 #like {
   font-size: 20px;
+}
+
+.userOptions {
+  padding: 10px;
+  width: 27%;
+}
+
+.userOptions a {
+  margin: 10px;
+}
+
+.userOptions form {
+  display: inline-block;
+}
+
+
+.profile {
+  border-top: 2px solid black;
+  position: inline-block;
+  margin: 20px;
+}
+
+#editAccount {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#deleteAccount {
+  display: inline-block;
+  float: right;
+  margin: 20px 30px 0px 0px;
 }

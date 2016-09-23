@@ -18,14 +18,14 @@
 <h3>Summary</h3><br><br>
 
 
-<div id="user-answers">
+<div class="profile" id="user-answers">
 <p><a id="answers" href="#">Answers</a> (<%= @user.answers.count%>)</p>
 <% @user.answers.first(5).each do |answers| %>
   <p><a href="#"><%= answers.content %></a></p>
   <% end %>
 </div>
 
-<div id="user-questions">
+<div class="profile" id="user-questions">
 <p id="questions">Questions (<%= @user.questions.count %>)</p>
 <% @user.questions.first(5).each do |question| %>
   <p><a href="/questions/<%= question.id %>"><%= question.title %></a></p>

@@ -1,0 +1,5 @@
+<h1>Add your response:</h1>
+<form action='/responses/questions/<%= session[:question_id] %>' method="POST">
+  <textarea name="content" rows="10" cols="50">Enter response here:</textarea>
+  <input type="submit" value="Add Response">
+</form>

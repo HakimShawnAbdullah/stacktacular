@@ -1,33 +1,80 @@
 <div class="container">
+
 	<div>
-		<h1><%= total_votes(@question) %> <%= @question.title %></h1>
-		<p><%= @user.name %></p>
+		<h1><%= @question.title %></h1>
+	<div id="like">Likes: <span id="newVote"><%= total_votes(@question) %></span>
+		 <% if current_user %>
+
+					<form class="inline votingForm" action="/votes/question/<%= @question.id %>" method="post">
+						<input type="hidden" name="vote" value="upvote">
+				    <button type="submit" name="vote" value="upvote" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-arrow-up"></span>
+				    </button>
+				  </form>
+				  <form class="inline votingForm" action="/votes/question/<%= @question.id %>" method="post">
+				  	<input type="hidden" name="vote" value="downvote">
+				    <button type="submit" name="vote" value="downvote" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-arrow-down"></span></button>
+					</form>
+			<% end %>
+</div>
+
+
+		<p>Author name: <%= @user.name %>
+
 	</div>
 
 	<div class="content">
 		<p><%= @question.content %></p>
 	</div>
+	<a href="/responses/questions/new">Add Comment</a>
+
+	<% @question.responses.each do |response| %>
+		<div class="questionResponses">
+			<p><%= response.content %></p>
+		</div>
+	<% end %>
 
 	<div class="answers">
+		<h3>Answers: </h3>
 		<% @question.answers.each do |answer| %>
 			<div class="answer">
 				<div class="score">
-				  <form class="inline" action="/votes/<%= answer.id %>" method="post">
+		 <% if current_user %>
+
+				  <form class="inline votingFormAnswer" action="/votes/answer/<%= answer.id %>" method="post">
+				  	<input type="hidden" name="vote" value="upvote">
 				    <button type="submit" name="vote" value="upvote" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-arrow-up"></span></button>
+				  </form>
+				  <form class="inline votingFormAnswer" action="/votes/answer/<%= answer.id %>" method="post">
+				  	<input type="hidden" name="vote" value="downvote">
 				    <button type="submit" name="vote" value="downvote" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-arrow-down"></span></button>
 				  </form>
+		 <% end %>
 
-				  <!--
-glyphicon glyphicon-arrow-up
-glyphicon glyphicon-arrow-down -->
-					<p><%= total_votes(answer) %> <%= answer.content %></p>
+					<p><b>Number of votes: <span id="newVoteA"> <%= total_votes(answer) %></span></b></p>
+
+					<p><%= answer.content %></p>
 				</div>
+			<a href="/responses/answers/<%= answer.id %>/new">Add Comment</a>
+
+			<% answer.responses.each do |response| %>
+				<div class="answerResponses">
+					<p><%= response.content %></p>
+				</div>
+			<% end %>
+
 			</div>
 		<% end %>
 	</div>
 
+	<% if current_user %>
+
 	<a id="answerFormLink" href="/answers/new">Answer this question</a>
+
+	<% end %>
+
 	<a href="/">Back home</a>
 </div>
+
+
 
 <div class="container" id="answerFormDiv"></div>

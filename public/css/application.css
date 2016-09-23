@@ -1,8 +1,11 @@
+
 .container {
   margin: 20px auto;
+  border-radius: 15px;
   width: 800px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
+  background-color: #FFF8DC;
 }
 
 .votes {
@@ -14,8 +17,12 @@
 }
 
 .tabs {
+  margin-left: -40px;
   list-style: none;
-  border: 1px grey solid;
+  font-size: 14px;
+  left: 5%;
+  color: black;
+
 }
 
 .tabs li {
@@ -32,3 +39,196 @@
 .tabs li a {text-decoration: none;}
 .tabs li a:hover {background-color: #D3D3D3;}
 .tabs li a:focus, .active {background-color: #D3D3D3;}
+
+
+h1 {
+  text-align: center;
+  font-size: 70px;
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+h2 {
+  color: #00008B;
+}
+
+h3 {
+  position: relative;
+  left: 37%;
+  font-size: 30px;
+}
+
+#user-answers {
+  position: inline-block;
+  float: left;
+  width: 40%;
+  left: 5%;
+  right: 5%;
+  height: 200px;
+  margin: 20px;
+  padding: 10px;
+}
+
+#user-home {
+  float: right;
+  margin-right: 5%;
+}
+
+#answers {
+  color: #00008B;
+}
+
+.answers{
+  border: 1px dotted pink;
+  border-radius: 15px;
+  margin-top: 15px;
+  /*background-color: #8ED2C9;*/
+  color: white;
+  background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.answer{
+  border: 1px dotted pink;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+  color: black;
+  background-color: #DA670B;
+}
+
+.content{
+  /*border: 5px dotted pink;*/
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 15px;
+  font-style: italic;
+  border-radius: 20px;
+}
+
+#user-questions {
+  float: left;
+  width: 40%;
+  height: 200px;
+  left: 0;
+  padding: 10px;
+}
+
+#questions {
+  color: #00008B;
+}
+
+.questions {
+  border-bottom: 1px dotted black;
+}
+
+#user-responses {
+  border-top: 2px solid black;
+  margin-left: -20px;
+  position: relative;
+  float: left;
+  width: 40%;
+  left: 5%;
+
+}
+
+#responses {
+  color: #00008B;
+}
+
+#user-display {
+  position: relative;
+  left: 5%;
+}
+
+#user-vote {
+  border-top: 2px solid black;
+  color: #00008B;
+  float: left;
+  width: 40%;
+  margin-left: 80px;
+}
+
+body {
+  background: rgb(181,189,200);
+  /*background:radial-gradient(circle closest-side at 60% 43%, #b03 26%, rgba(187,0,51,0) 27%),
+  radial-gradient(circle closest-side at 40% 43%, #b03 26%, rgba(187,0,51,0) 27%),
+  radial-gradient(circle closest-side at 40% 22%, #d35 45%, rgba(221,51,85,0) 46%),
+  radial-gradient(circle closest-side at 60% 22%, #d35 45%, rgba(221,51,85,0) 46%),
+  radial-gradient(circle closest-side at 50% 35%, #d35 30%, rgba(221,51,85,0) 31%),
+
+  radial-gradient(circle closest-side at 60% 43%, #b03 26%, rgba(187,0,51,0) 27%) 50px 50px,
+  radial-gradient(circle closest-side at 40% 43%, #b03 26%, rgba(187,0,51,0) 27%) 50px 50px,
+  radial-gradient(circle closest-side at 40% 22%, #d35 45%, rgba(221,51,85,0) 46%) 50px 50px,
+  radial-gradient(circle closest-side at 60% 22%, #d35 45%, rgba(221,51,85,0) 46%) 50px 50px,
+  radial-gradient(circle closest-side at 50% 35%, #d35 30%, rgba(221,51,85,0) 31%) 50px 50px;
+  background-color:#b03;
+  background-size:100px 100px;*/
+}
+
+.questionFormDiv {
+  display: none;
+}
+
+#answerFormDiv{
+  display: none;
+}
+
+#like {
+  font-size: 20px;
+}
+
+.userOptions {
+  padding: 10px;
+  width: 300px;
+}
+
+.userOptions a {
+  margin: 10px;
+}
+
+.userOptions form {
+  display: inline-block;
+}
+
+
+.profile {
+  border-top: 2px solid black;
+  position: inline-block;
+  margin: 20px;
+}
+
+#editAccount {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#deleteAccount {
+  display: inline-block;
+  float: right;
+  margin: 20px 30px 0px 0px;
+}
+
+#title {
+  margin: 20px auto;
+  border-radius: 15px;
+  width: 500px;
+  padding: 0px 10px 10px 10px;
+  border: 1px dotted black;
+  background-color: #FCF4D9;
+}
+
+.inline button {
+  margin-bottom: 3px;
+}
+
+.answerResponses {
+  border-left: 1px solid black;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+
+.questionResponses {
+  border-left: 1px solid black;
+  padding-left: 10px;
+  border-radius: 5px;
+}

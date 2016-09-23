@@ -1,16 +1,23 @@
 <div>
-  <h1>Stacktacular!</h1>
+  <div id="title">
+    <h1>Stacktacular!</h1>
+  </div>
 
   <% if current_user %>
   <!-- make a users controller and view to handle this request -->
-    <a href="/users/<%= current_user.id%>"><%= current_user.name %></a>'s profile
+  <div class="container userOptions">
+
+    <a href="/users/<%= current_user.id%>">Profile</a>
+    <a class="questionForm" href="/questions/new">Post a question</a>
     <form action="/sessions" method="post">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="Log Out">
     </form>
+  </div>
   <% end %>
 
   <div class="container" id="post_container">
+
     <h2>Recent Posts</h2>
     <% @questions.each do |question| %>
       <div class="questions">
@@ -45,7 +52,6 @@
   <% end %>
 
   <% if current_user %>
-    <a class="questionForm" href="/questions/new">Post a question</a>
     <div class="questionFormDiv container"></div>
   <% end %>
 

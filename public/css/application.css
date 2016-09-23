@@ -216,3 +216,7 @@ body {
   border: 1px dotted black;
   background-color: #FCF4D9;
 }
+
+.inline button {
+  margin-bottom: 3px;
+}

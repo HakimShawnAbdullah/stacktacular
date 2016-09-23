@@ -23,3 +23,15 @@ post '/votes/question/:id' do
   redirect "questions/#{session[:question_id]}"
   end
 end
+
+post '/votes/answer/:id' do
+  answer = Answer.find(params[:id])
+
+  answer.votes.create(type_of_vote: params[:vote])
+
+  if request.xhr?
+    total_votes(answer).to_s
+  else
+    redirect "questions/#{session[:question_id]}"
+  end
+end

@@ -8,6 +8,7 @@ $(document).ready(function() {
   showQuestionForm()
   showAnswerForm()
   questionVote()
+  answerVote()
 });
 
 function showRegForm() {
@@ -62,6 +63,7 @@ function questionVote() {
   $(".votingForm").on("click", function(event){
     event.preventDefault();
     var route = $(this).attr("action");
+      console.log("----------------in ajax---------------");
 
     $.ajax({
       method: "POST",
@@ -69,7 +71,25 @@ function questionVote() {
       data: $(this).serialize()
     })
       .done(function(result){
+// TODO make it target the answer text
         $("#newVote").text(result)
       });
   });
 };
+  function answerVote(){
+    $(".votingFormAnswer").on("click", function(event){
+    event.preventDefault();
+    var route = $(this).attr('action');
+
+    $.ajax({
+      method: "POST",
+      url: route,
+      data: $(this).serialize()
+    })
+    .done(function(result){
+      $("#newVoteA").text(result)
+    })
+  });
+};
+
+

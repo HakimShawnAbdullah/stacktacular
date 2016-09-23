@@ -34,14 +34,18 @@
 				<div class="score">
 		 <% if current_user %>
 
-				  <form class="inline" action="/votes/<%= answer.id %>" method="post">
+				  <form class="inline votingFormAnswer" action="/votes/answer/<%= answer.id %>" method="post">
+				  	<input type="hidden" name="vote" value="upvote">
 				    <button type="submit" name="vote" value="upvote" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-arrow-up"></span></button>
+				  </form>
+				  <form class="inline votingFormAnswer" action="/votes/answer/<%= answer.id %>" method="post">
+				  	<input type="hidden" name="vote" value="downvote">
 				    <button type="submit" name="vote" value="downvote" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-arrow-down"></span></button>
 				  </form>
 
 		 <% end %>
 
-					<p><b>Number of votes: <%= total_votes(answer) %></b></p>
+					<p><b>Number of votes: <span id="newVoteA"> <%= total_votes(answer) %></span></b></p>
 
 					<p><%= answer.content %></p>
 				</div>

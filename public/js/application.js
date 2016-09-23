@@ -7,6 +7,7 @@ $(document).ready(function() {
   showRegForm()
   showQuestionForm()
   showAnswerForm()
+  questionVote()
 });
 
 function showRegForm() {
@@ -53,6 +54,22 @@ function showAnswerForm() {
         $("#answerFormDiv").append(form);
         $("#answerFormDiv").css("display", "block")
         $("#answerFormLink").css("display","none")
+      });
+  });
+};
+
+function questionVote() {
+  $(".votingForm").on("click", function(event){
+    event.preventDefault();
+    var route = $(this).attr("action");
+
+    $.ajax({
+      method: "POST",
+      url: route,
+      data: $(this).serialize()
+    })
+      .done(function(result){
+        $("#newVote").text(result)
       });
   });
 };

@@ -1,8 +1,26 @@
 <div class="container">
+
 	<div>
 		<h1><%= @question.title %></h1>
-		<div id="like">Likes: <%= total_votes(@question) %></div>
-		<p>Author name: <%= @user.name %></p>
+	<div id="like">Likes: <span id="newVote"><%= total_votes(@question) %></span>
+		 <% if current_user %>
+
+					<form class="inline votingForm" action="/votes/question/<%= @question.id %>" method="post">
+						<input type="hidden" name="vote" value="upvote">
+				    <button type="submit" name="vote" value="upvote" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-arrow-up"></span>
+				    </button>
+				  </form>
+				  <form class="inline votingForm" action="/votes/question/<%= @question.id %>" method="post">
+				  	<input type="hidden" name="vote" value="downvote">
+				    <button type="submit" name="vote" value="downvote" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-arrow-down"></span></button>
+					</form>
+
+			<% end %>
+</div>
+
+
+		<p>Author name: <%= @user.name %>
+
 	</div>
 
 	<div class="content">
@@ -14,18 +32,32 @@
 		<% @question.answers.each do |answer| %>
 			<div class="answer">
 				<div class="score">
+		 <% if current_user %>
+
 				  <form class="inline" action="/votes/<%= answer.id %>" method="post">
-				    <button type="submit" name="vote" value="upvote" class="upvote-button"></button>
-				    <button type="submit" name="vote" value="downvote" class="downvote-button"></button>
+				    <button type="submit" name="vote" value="upvote" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-arrow-up"></span></button>
+				    <button type="submit" name="vote" value="downvote" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-arrow-down"></span></button>
 				  </form>
+
+		 <% end %>
+
 					<p>Number of votes: <%= total_votes(answer) %> <%= answer.content %></p>
+
+					<p><%= total_votes(answer) %> <%= answer.content %></p>
 				</div>
 			</div>
 		<% end %>
 	</div>
 
+	<% if current_user %>
+
 	<a id="answerFormLink" href="/answers/new">Answer this question</a>
+
+	<% end %>
+
 	<a href="/">Back home</a>
 </div>
+
+
 
 <div class="container" id="answerFormDiv"></div>

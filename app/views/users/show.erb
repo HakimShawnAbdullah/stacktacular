@@ -1,24 +1,26 @@
+
+<div class="container">
  <a id="user-home" href="/" >Home</a>
-<div id="nav">
-  <ul class="tabs">
-    <li><a href="#" class="tablinks">Profile</a></li>
-    <li><a href="#" class="tablinks">Activity</a></li>
-    <li><a href="/users/<%= @user.id %>/edit" class="tablinks">Edit Profile & Settings</a></li>
-  </ul>
+
+  <div id="nav">
+    <ul class="tabs">
+      <li><a href="#" class="tablinks">Profile</a></li>
+      <li><a href="#" class="tablinks">Activity</a></li>
+      <li><a href="/users/<%= @user.id %>/edit" class="tablinks">Edit Profile & Settings</a></li>
+    </ul>
+  </div>
+  <h2><%= @user.name %></h2>
+  <a href="/users/<%= @user.id %>/edit">click here to edit</a>
 
 
-</div>
-<div id="user-display">
-<h2><%= @user.name %></h2>
-<a href="/users/<%= @user.id %>/edit">click here to edit</a><br>
-</div><br><br><br>
+
 
 <h3>Summary</h3><br><br>
 
 
 <div id="user-answers">
 <p><a id="answers" href="#">Answers</a> (<%= @user.answers.count%>)</p>
-<% @user.answers.first(5).each do |response| %>
+<% @user.answers.first(5).each do |answers| %>
   <p><a href="#"><%= answers.content %></a></p>
   <% end %>
 </div>
@@ -38,3 +40,6 @@
 </div>
 
 <p id="user-vote" >Votes Cast (<%= @user.votes.count %>)</p><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class='container questionFormDiv'></div>
+</div>

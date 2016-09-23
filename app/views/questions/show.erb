@@ -14,7 +14,6 @@
 				  	<input type="hidden" name="vote" value="downvote">
 				    <button type="submit" name="vote" value="downvote" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-arrow-down"></span></button>
 					</form>
-
 			<% end %>
 </div>
 
@@ -26,6 +25,13 @@
 	<div class="content">
 		<p><%= @question.content %></p>
 	</div>
+	<a href="/responses/questions/new">Add Comment</a>
+
+	<% @question.responses.each do |response| %>
+		<div class="questionResponses">
+			<p><%= response.content %></p>
+		</div>
+	<% end %>
 
 	<div class="answers">
 		<h3>Answers: </h3>
@@ -42,13 +48,20 @@
 				  	<input type="hidden" name="vote" value="downvote">
 				    <button type="submit" name="vote" value="downvote" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-arrow-down"></span></button>
 				  </form>
-
 		 <% end %>
 
 					<p><b>Number of votes: <span id="newVoteA"> <%= total_votes(answer) %></span></b></p>
 
 					<p><%= answer.content %></p>
 				</div>
+			<a href="/responses/answers/<%= answer.id %>/new">Add Comment</a>
+
+			<% answer.responses.each do |response| %>
+				<div class="answerResponses">
+					<p><%= response.content %></p>
+				</div>
+			<% end %>
+
 			</div>
 		<% end %>
 	</div>
